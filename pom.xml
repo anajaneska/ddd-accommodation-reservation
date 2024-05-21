@@ -7,11 +7,19 @@
     <groupId>mk.ukim.finki.emt</groupId>
     <artifactId>ddd-accommodation-reservation</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
 
     <properties>
         <maven.compiler.source>22</maven.compiler.source>
         <maven.compiler.target>22</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+
+    <modules>
+        <module>shared-kernel</module>
+        <module>accommodation-list</module>
+        <module>reservation-management</module>
+        <module>user-management</module>
+    </modules>
 
 </project>
