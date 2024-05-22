@@ -47,20 +47,19 @@ public class Accommodation extends AbstractEntity<AccommodationId> {
         return availability.contains(date);
 
     }
-    public boolean reserve(Date date) {
-        if (isAvailable(date)) {
-            availability.remove(date);
-            return true;
-        }
-        return false;
-    }
+//    public boolean reserve(Date date) {
+//        if (isAvailable(date)) {
+//            availability.remove(date);
+//            return true;
+//        }
+//        return false;
+//    }
     public boolean reserve(List<Date> dates) {
         for (Date date : dates) {
             if (!isAvailable(date)) {
-                return false;  // If any date is not available, reservation fails
+                return false;
             }
         }
-        // If all dates are available, reserve them
         for (Date date : dates) {
             availability.remove(date);
         }
@@ -71,7 +70,6 @@ public class Accommodation extends AbstractEntity<AccommodationId> {
             availability.add(date);
         }
     }
-    // Method to remove availability
     public void removeAvailability(Date date) {
         availability.remove(date);
     }

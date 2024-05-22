@@ -14,7 +14,8 @@ import java.util.Date;
 public class Reservation extends AbstractEntity<ReservationId> {
     @AttributeOverride(name = "id", column = @Column(name = "flight_id", nullable = false))
     private AccommodationId accommodationId;
-    //private UserId userid;
+    @AttributeOverride(name = "id", column = @Column(name = "user_id", nullable = false))
+    private UserId userid;
     private Date dateOfArrival;
     private Date dateOfDeparture;
     private Money totalPrice;
