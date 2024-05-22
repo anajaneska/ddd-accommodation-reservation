@@ -7,6 +7,7 @@ import mk.ukim.finki.emt.reservationmanagemnet.domain.model.ReservationId;
 import mk.ukim.finki.emt.reservationmanagemnet.domain.repository.ReservationRepository;
 import mk.ukim.finki.emt.reservationmanagemnet.service.ReservationService;
 import mk.ukim.finki.emt.reservationmanagemnet.service.forms.ReservationForm;
+import mk.ukim.finki.emt.sharedkernel.infra.DomainEventPublisher;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -17,6 +18,7 @@ import java.util.Optional;
 @AllArgsConstructor
 public class ReservationServiceImpl implements ReservationService {
     private final ReservationRepository reservationRepository;
+    private final DomainEventPublisher domainEventPublisher;
 
     @Override
     public ReservationId makeReservation(ReservationForm orderForm) {
